@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('orders.png') no-repeat center center/cover;
+        }
+        
+        .order-form {
+            background: rgba(255, 255, 255, 0.15);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            padding: 30px;
+            border-radius: 16px;
+            backdrop-filter: blur(25px);
+            text-align: center;
+            color: white;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.15);
+            margin: 20px;
+        }
+        
+        .form-title {
+            font-size: 36px; 
+            margin-bottom: 30px;
+            color: #fff; 
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+            color: #555;
+        }
+        
+        th {
+            background-color: rgba(242, 242, 242, 0.3);
+        }
+        
+        input[type="text"],
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            padding: 12px 12px 12px 45px;
+            border-radius: 99px;
+            outline: 3px solid transparent;
+            transition: 0.3s;
+            font-size: 17px;
+            color: white;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            text-align: left; 
+        }
+        
+        input[type="text"]:focus,
+        select:focus {
+            outline: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .order-btn,
+        .payment-btn {
+            width: 100%;
+            padding: 10px 0;
+            background: #2F9CF4;
+            border: none;
+            border-radius: 99px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .order-btn:hover,
+        .payment-btn {
+            background: #0B87EC;
+        }
+        
+        .payment-btn {
+            background: #4CAF50;
+        }
+        
+        .payment-btn:hover {
+            background: #43A047;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .receipt-container {
+            text-align: left; 
+        }
+        
+        .receipt-container h1 {
+            text-align: center; 
+        }
+        
+        .receipt-container p {
+            margin-left: 20px;
+        }
+
+        .qr-code {
+            display: block;
+            margin: 20px auto; 
+            width: 150px; 
+            height: 150px; 
+        }
+
+select {
+    width: 100%;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('orders.png');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 18px auto;
+    cursor: pointer;
+}
+
+select:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+select:focus {
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: left;
+    transition: 0.3s;
+}
+
+input[type="text"]:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#item-price,
+#delivery-charge,
+#total {
+    color: white;
+}
+
+.form-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #ccc; 
+}
+
+.receipt-container h1 {
+    text-align: center; 
+    color: #ccc;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: left;
+}
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images3.alphacoders.com/108/1081008.png') no-repeat center center/cover;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .order-form {
+                padding: 20px;
+                width: 90%;
+            }
+        }
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding: 0 5%;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        header h1 {
+            font-size: 40px;
+            color: white;
+            text-shadow: 2px 2px 4px black; 
+        }
+
+        header nav {
+            display: flex;
+            gap: 30px;
+        }
+        header nav a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 99px;
+            transition: 0.3s;
+            color: rgb(255, 255, 255); 
+        }
+
+        header nav a.active {
+            background: rgba(255, 255, 255, 0.1); 
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); 
+        }
+
+        header nav a:hover {
+            background: rgba(255, 255, 255, 0.1); 
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+        }
+
+
+        .home {
+            display: flex;
+            height: 100vh; 
+            position: relative;
+            overflow: hidden;
+        }
+
+        .account-login {
+            display: inline-block;
+            margin-left: auto;
+        }
+
+        .account-login i {
+            font-size: 30px; 
+            color: white; 
+            margin-top: 10px; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>UniSwift</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="orders.html" class="active">Orders</a>
+            <a href="community.html">Community</a>
+            <a href="support.html">Support</a>
+            <li class="account-login" style="margin-top: -2.7px;">
+                <a href="login.html"><i class="fas fa-user" style="font-size: 25px;"></i></a>
+            </li>
+        </nav>
+    </header>
+    
+    <form action="#" class="order-form">
+        <h1 id="form-title" class="form-title">MAKE YOUR ORDER</h1>
+
+    <div id="order-content">
+        <table>
+            <tr>
+                <th>Order Mode</th>
+                <td>
+                    <select id="delivery-mode">
+                        <option value="intra-campus">intra-campus</option>
+                        <option value="inter-campus">inter-campus</option>
+                        <option value="hometown">hometown</option>
+                    </select>
+                </td>
+                <th>Item Name</th>
+                <td><input type="text" id="order-item" placeholder="stuff"></td>
+            </tr>
+            <tr>
+                <th>Pickup Location</th>
+                <td><input type="text" id="pickup-location" placeholder="collect"></td>
+                <th>Item Price</th>
+                <td><input type="text" id="order-price" placeholder="cost"></td>
+            </tr>
+            <tr>
+                <th>Delivery Location</th>
+                <td><input type="text" id="delivery-location" placeholder="drop"></td>
+                <th>Mobile Number</th>
+                <td><input type="text" id="phone-number" placeholder="phone"></td>
+            </tr>
+        </table>
+
+        <button type="button" class="order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <div id="receipt" class="receipt-container hidden">
+        <table class="receipt-table">
+            <tr>
+                <th>Item Price</th>
+                <td style="text-align: right;"><span id="item-price"></span></td>
+            </tr>
+            <tr>
+                <th>Delivery Charge</th>
+                <td style="text-align: right;"><span id="delivery-charge"></span></td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td style="text-align: right;"><span id="total"></span></td>
+            </tr>
+        </table>
+        <img src="https://cdn.ttgtmedia.com/rms/misc/qr_code_barcode.jpg" alt="QR Code" class="qr-code" style="border: 2px solid #4CAF50; display: block; margin: 20px auto; width: 150px; height: 150px;">
+        <br>
+        <button type="button" class="payment-btn" onclick="makePayment()">Pay</button>
+    </div>
+</form>
+
+<script>
+    function placeOrder() {
+        var orderPrice = parseFloat(document.getElementById('order-price').value);
+        var deliveryMode = document.getElementById('delivery-mode').value;
+        var deliveryCharge = getDeliveryCharge(deliveryMode);
+        var totalAmount = orderPrice + deliveryCharge;
+
+        document.getElementById('item-price').innerText = '₹' + orderPrice.toFixed(2);
+        document.getElementById('delivery-charge').innerText = '₹' + deliveryCharge.toFixed(2);
+        document.getElementById('total').innerText = '₹' + totalAmount.toFixed(2);
+
+        document.getElementById('form-title').textContent = 'INVOICE'; 
+        document.getElementById('order-content').style.display = 'none';
+        document.getElementById('receipt').classList.remove('hidden');
+
+        document.querySelector('.order-form').style.width = '50%'; 
+        document.querySelector('.order-form').style.maxWidth = '400px'; 
+    }
+
+    function makePayment() {
+        alert('Payment Successful!');
+    }
+
+    function getDeliveryCharge(deliveryMode) {
+        switch(deliveryMode) {
+            case 'intra-campus':
+                return 10.00;
+            case 'inter-campus':
+                return 20.00;
+            case 'hometown':
+                return 100.00;
+            default:
+                return 0.00;
+        }
+    }
+</script>
+
+</body>
+</html>

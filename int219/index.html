@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniSwift</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding: 0 5%;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+        }
+        header h1 {
+            font-size: 40px;
+            color: white;
+            text-shadow: 2px 2px 4px black; 
+        }
+
+        header nav {
+            display: flex;
+            gap: 30px;
+        }
+        header nav a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 99px;
+            transition: 0.3s;
+            color: rgb(255, 255, 255);
+        }
+
+        header nav a.active {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); 
+        }
+
+        header nav a:hover {
+            background: rgba(255, 255, 255, 0.1); 
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+        }
+
+        header nav:hover > a:not(:hover) {
+            background: none;
+        }
+
+
+        .home {
+            display: flex;
+            height: 100dvh;
+            background: linear-gradient(to top, #D2E2FB 30%, #86A8DB);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home img {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            pointer-events: none;
+        }
+
+
+        .home .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 50px;
+            text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+            white-space: nowrap;
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+        }
+
+
+        .about {
+            padding: 50px;
+            background: #3B3291;
+            color: white;
+            position: relative;
+            z-index: 100;
+        }
+        .about h1 {
+            font-size: 40px;
+        }
+
+        .account-login {
+            display: inline-block;
+            margin-left: auto;
+        }
+
+        .account-login i {
+            font-size: 30px; 
+            color: white;
+            margin-top: 10px; 
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNISWIFT</h1>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="orders.html">Orders</a>
+        <a href="community.html">Community</a>
+        <a href="support.html">Support</a>
+        <li class="account-login" style="margin-top: 0.7px;">
+            <a href="login.html"><i class="fas fa-user" style="font-size: 25px;"></i></a>
+        </li>
+        
+        
+    </nav>
+</header>
+
+<section class="home">
+    <img src="assets/mount2.png" class="mount2">
+    <img src="assets/mount1.png" class="mount1">
+    <img src="assets/bush2.png" class="bush2">
+
+    <h3 class="title">connecting campus needs!</h3>
+
+    <img src="assets/bush1.png" class="bush1">
+    <img src="assets/leaf2.png" class="leaf2">
+    <img src="assets/leaf1.png" class="leaf1">
+</section>
+
+<section class="about">
+    <h1>UniSwift</h1>
+    <br>
+    <p>Introducing UniSwift, the ultimate solution for all your campus delivery needs at Lovely Professional University (LPU).
+         With a bustling student body and dedicated faculty, UniSwift aims to redefine convenience within the campus premises.
+          Say goodbye to tedious errands and hello to seamless deliveries with just a few clicks on our user-friendly platform.</p>
+    <br>
+    <p>UniSwift isn't just about getting your essentials; it's about empowering students.
+         Our innovative delivery network allows nearby students to earn extra income by fulfilling delivery requests,
+          fostering a sense of community and entrepreneurship. Plus, with transparent pricing and secure transactions,
+           UniSwift ensures a hassle-free experience every time.</p>
+    <br>
+    <p>From study snacks to forgotten supplies, UniSwift has you covered anytime.
+         Experience the convenience, safety, and efficiency of campus delivery like never before.
+          Join the UniSwift revolution today and elevate your campus experience at LPU!</p>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('https://get.wallhere.com/photo/digital-art-landscape-mountains-sunset-forest-lagoon-pink-1510147.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        .outer-box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            top: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .box {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+        }
+
+        input[type="text"], input[type="number"], input[type="tel"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.4);
+            color: #000;
+        }
+        
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #67539f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #616161;
+        }
+
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+            margin-top: 20px;
+            max-width: 400px; 
+        }
+
+        .transparent-button {
+    width: 100%; 
+    padding: 5px; 
+    background-color: transparent;
+    border: none;
+    color: #000;
+    border-radius: 10px; 
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 15px;
+}
+
+.transparent-button:hover {
+    color: #ffffff; 
+}
+
+        .contact-box {
+            width: 100%; 
+        }
+
+        ul {
+            padding-left: 20px;
+            overflow-y: auto; 
+            max-height: 300px; 
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        .help h3,
+        .faq-box h3,
+        .contact-box h3 {
+            color: #444;
+            text-align: center;
+            font-size: 18;
+        }
+
+        .faq-box {
+            margin-top: -18px;
+        }
+
+        input[type="text"]#searchInput {
+    width: 100%;
+    padding: 12px 20px; 
+    margin-bottom: 20px; 
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    color: #000;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]#searchInput:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="text"]#searchInput:focus {
+    outline: none; 
+    border-color: #fff; 
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7); 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 5%;
+    position: absolute;
+    width: 100%;
+    top: 6px;
+    z-index: 100;
+}
+header h1 {
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px black; 
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+header nav a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 99px;
+    transition: 0.3s;
+    color: rgb(255, 255, 255); 
+}
+
+header nav a.active {
+    background: rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); 
+}
+
+header nav a:hover {
+    background: rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+}
+
+header h1 {
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px black; 
+    font-weight: 550;
+}
+
+
+.home {
+    display: flex;
+    height: 100vh; 
+    position: relative;
+    overflow: hidden;
+}
+
+.account-login {
+    display: inline-block;
+    margin-left: auto;
+}
+
+.account-login i {
+    font-size: 30px; 
+    color: white; 
+    margin-top: 10px; 
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>UniSwift</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="orders.html">Orders</a>
+            <a href="community.html">Community</a>
+            <a href="support.html"class="active">Support</a>
+            <li class="account-login" style="margin-top: 0.7px;">
+                <a href="login.html"><i class="fas fa-user" style="font-size: 25px;"></i></a>
+            </li>
+        </nav>
+    </header>
+    
+
+    <div class="outer-box">
+        <div class="container">
+            <div class="box help">
+                <h3>HELP</h3><br>
+                <input type="text" id="searchInput" placeholder="Search...">
+                <div class="button-container"><br>
+                    <button class="transparent-button"><b>Order Status</b></button><br><br>
+                    <button class="transparent-button"><b>Troubleshoot</b></button><br><br>
+                    <button class="transparent-button"><b>UniSwift Care</b></button><br><br>
+                    <button class="transparent-button"><b>Gofer Jobs</b></button><br><br>
+                    <button class="transparent-button"><b>Delivery Policy</b></button><br><br>
+                    <button class="transparent-button"><b>Service Centre</b></button>
+                </div>
+            </div>
+            
+
+            <div class="right-column">
+                <div class="box faq-box">
+                    <h3>FAQs</h3><br>
+                    <ul>
+                        <li><b>How does UniSwift work?</b> UniSwift is an integrated delivery platform accessible through an online website. Users can place orders for various items they need, and nearby students fulfill these delivery requests.</li>
+                        <li><b>What types of deliveries does UniSwift offer?</b> UniSwift offers three types of deliveries: intra-campus deliveries for 10 rupees, inter-campus deliveries for 20 rupees, and hometown deliveries for 200 rupees.</li>
+                        <li><b>How does UniSwift ensure the safety and security of deliveries?</b> UniSwift prioritizes safety by utilizing a personalized delivery network of nearby students. Additionally, all delivery transactions are monitored and tracked through the platform.</li>
+                        <li><b>Can students earn money with UniSwift?</b> Yes, students can earn income by fulfilling delivery requests through UniSwift's location-based notifications. They receive a portion of the delivery charge for each completed order.</li>
+                        <li><b>Are there any restrictions on what UniSwift can deliver?</b> UniSwift can deliver a wide range of items, including online order pickups, forgotten items, and items from students' hometowns. However, there may be restrictions on delivering certain prohibited items.</li>
+                        <li><b>How does UniSwift handle payment for deliveries?</b> UniSwift operates on a revenue-sharing model, where 50% of the delivery charge from each order contributes to the platform's revenue stream.</li>
+                        <li><b>Can faculty members use UniSwift?</b> Yes, UniSwift also caters to faculty members by delivering meals and supplies directly to their offices or classrooms, enhancing their work-life balance.</li>
+                        <li><b>What are the benefits of using UniSwift?</b> UniSwift offers time-saving convenience, economic opportunities for students, and enhanced accessibility to essential items for both students and faculty members.</li>
+                        <li><b>How can I track my delivery status?</b> Users can track their delivery status through the UniSwift website or mobile application, which provides real-time updates on the location of their items.</li>
+                        <li><b>What sets UniSwift apart from other delivery services?</b> UniSwift is tailored specifically for the Lovely Professional University campus, addressing the unique needs and challenges of its student and faculty population. It offers a personalized delivery network and a range of delivery options at affordable prices.</li>
+                    </ul>
+                </div>
+
+                <div class="box contact-box">
+                    <h3>CONTACT US</h3><br>
+                    <p><b>Contact:</b> 08931 80174</p>
+                    <p><b>Email:</b> support@uniswift.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
